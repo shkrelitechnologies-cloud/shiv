@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - discovery.py
+      - shiv.py
+      - sites.json
+      - requirements.txt
+      - OPERATIONS.md
       - .github/workflows/shiv.yml
   workflow_dispatch:
   schedule:
