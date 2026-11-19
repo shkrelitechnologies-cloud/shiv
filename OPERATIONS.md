@@ -49,3 +49,6 @@ The daily summary must report target, verified unique public placements, remaini
 ## Operational truth
 
 A configured workflow or successful maintenance run is not evidence of publication. Report actual verified public placements only. Do not claim 24/7 execution unless the workflow schedule and recent successful runs establish it. Keep all credentials in GitHub Actions secrets; never place secrets in this repository or logs.
+
+## Operator shorthand: `666`
+When the operator requests `666`, include SHIV in the four-project audit (COCO, HUNTER, MAYA, SHIV). Read `operations/DAILY_SUMMARY.json` and reconcile today's IST count against `operations/PUBLICATION_LEDGER.csv`; report verified unique publications / 666, remaining target, separate attempts/pending/rejected/failed/skipped/uncertain counts, and required throughput to midnight IST. A successful Playwright or Actions run is not a publication. With no approved destination configured, report zero attempts and zero verified publications; do not fabricate destinations or treat discovery leads as permission. If the ledger is unavailable or inconsistent, report the count as **unverifiable**, not zero.
