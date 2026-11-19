@@ -26,6 +26,8 @@ If a destination requires additional text, a caption, unrelated form content, or
 
 ## Execution and recovery
 
+- `.github/workflows/shiv-watchdog.yml` runs every 15 minutes and can be manually dispatched. It checks whether `shiv.yml` is enabled, avoids duplicate active runs, requests cancellation of stale runs, and dispatches one recovery run if the last successful publisher run is older than 45 minutes. Watchdog health means workflow health only; it does not mean a publication occurred.
+
 - Run unattended only through configured, authorized automation and supported workflows.
 - On a blocked, unsupported, prohibited, or failing destination, record the reason and move on; do not repeatedly retry the same blocker.
 - Use bounded retries for transient technical failures and deduplicate before every submission.
