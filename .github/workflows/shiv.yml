@@ -1,4 +1,4 @@
-name: SHIV Playwright Publisher
+name: SHIV Playwright Publisher # Live execution requested
 
 on:
   push:
