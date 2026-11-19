@@ -174,23 +174,30 @@ def write_summary(results: list[Result]):
     SUMMARY_FILE.write_text(json.dumps(existing, indent=2) + "\n", encoding="utf-8")
 
 def main():
-    sites = read_json(SITES_FILE, [])
-    if not isinstance(sites, list):
+    configured_sites = read_json(SITES_FILE, [])
+    if not isinstance(configured_sites, list):
         raise SystemExit("sites.json must contain a JSON array")
+    # Ignore the human-readable template row; it is not a destination and must
+    # never create a fake skipped-attempt event on every scheduled run.
+    sites = [
+        site for site in configured_sites
+        if isinstance(site, dict) and not site.get("_instructions")
+    ]
     results: list[Result] = []
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        try:
-            for site in sites:
-                if not isinstance(site, dict):
-                    continue
-                result = process_site(browser, site)
-                results.append(result)
-                append_result(result)
-                print(json.dumps(result.__dict__, ensure_ascii=False))
-                time.sleep(2)
-        finally:
-            browser.close()
+    if sites:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            try:
+                for site in sites:
+                    result = process_site(browser, site)
+                    results.append(result)
+                    append_result(result)
+                    print(json.dumps(result.__dict__, ensure_ascii=False))
+                    time.sleep(2)
+            finally:
+                browser.close()
+    else:
+        print("No configured, permission-reviewed destinations; no publication attempt made.")
     write_summary(results)
     verified = sum(r.status == "verified" for r in results)
     print(f"SHIV run complete: {verified} verified public placements; target {TARGET}/IST day.")
