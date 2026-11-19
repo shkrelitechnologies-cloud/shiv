@@ -48,5 +48,10 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add operations/
             git commit -m "Update SHIV publication ledger"
-            git push
+            # The operator or another workflow may have committed while this
+            # bounded browser job was running. Rebase the generated ledger
+            # commit onto the latest main instead of dropping it on push reject.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
