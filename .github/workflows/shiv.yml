@@ -28,7 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
-      - name: Run SHIV
+      - name: Discover global multilingual destinations (research only)
+        run: python discovery.py
+      - name: Run SHIV against explicitly permission-reviewed adapters only
         run: python shiv.py
       - name: Commit operation ledger
         run: |
