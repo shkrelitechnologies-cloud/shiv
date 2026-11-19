@@ -1,13 +1,14 @@
 {
-  "date_ist": "",
+  "date_ist": "2026-11-19",
   "target": 666,
   "verified_publications": 0,
   "unique_verified_destinations": [],
   "attempts": 0,
   "pending": 0,
   "rejected": 0,
-  "skipped": 0,
+  "skipped": 1,
   "failed": 0,
   "uncertain": 0,
-  "remaining": 666
+  "remaining": 666,
+  "last_run_ist": "2026-11-19T23:40:37.427913+05:30"
 }
