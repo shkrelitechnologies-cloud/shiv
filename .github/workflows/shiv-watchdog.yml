@@ -1,0 +1,46 @@
+name: SHIV 15-minute watchdog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/shiv_watchdog.py
+      - .github/workflows/shiv-watchdog.yml
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: shiv-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate watchdog
+        run: python -m py_compile .github/scripts/shiv_watchdog.py
+      - name: Check publisher and recover if stale
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python .github/scripts/shiv_watchdog.py
+      - name: Preserve watchdog report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shiv-watchdog-${{ github.run_number }}
+          path: state/shiv-watchdog.json
+          if-no-files-found: warn
+          retention-days: 30
