@@ -1,6 +1,11 @@
 name: SHIV Playwright Publisher
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - discovery.py
+      - .github/workflows/shiv.yml
   workflow_dispatch:
   schedule:
     - cron: "*/15 * * * *"
