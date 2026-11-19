@@ -157,6 +157,28 @@ def write_summary(results: list[Result]):
         existing = {"date_ist": date, "target": TARGET, "verified_publications": 0,
                     "unique_verified_destinations": [], "attempts": 0, "pending": 0,
                     "rejected": 0, "skipped": 0, "failed": 0, "uncertain": 0}
+
+    # Correct the historical template-row false positive once. Earlier versions
+    # treated the instructional sites.json object as an invalid destination and
+    # incremented "skipped". Keep the append-only ledger untouched, but exclude
+    # that non-destination from the operational skip counter.
+    template_rows = 0
+    if LEDGER_FILE.exists():
+        import csv
+        with LEDGER_FILE.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                if (row.get("timestamp_ist", "").startswith(date)
+                        and row.get("site", "") == "unnamed"
+                        and not row.get("destination", "").strip()
+                        and row.get("status") == "skipped"
+                        and row.get("detail") == "invalid_destination_url"):
+                    template_rows += 1
+    previously_excluded = int(existing.get("template_skips_excluded", 0))
+    correction = max(0, template_rows - previously_excluded)
+    if correction:
+        existing["skipped"] = max(0, int(existing.get("skipped", 0)) - correction)
+    existing["template_skips_excluded"] = template_rows
+
     existing["attempts"] += sum(r.status in ("verified", "uncertain", "failed") for r in results)
     for r in results:
         if r.status == "verified" and r.destination not in existing["unique_verified_destinations"]:
