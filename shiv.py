@@ -362,6 +362,23 @@ def select_auto_candidates(db: dict, today_verified_destinations: set[str]) -> l
         last = (c.get("last_result") or "").lower()
         if status == "skipped" and any(x in (reasons + " " + last) for x in ("captcha", "login", "verification", "barrier", "prohibited", "unrelated", "negative")):
             continue
+        # Discovery/form detection is not proof that a destination permits this
+        # exact campaign payload. Auto-discovered candidates stay research-only
+        # until a human records current permission, relevance, and link-only review.
+        if c.get("permission_reviewed") is not True:
+            continue
+        if c.get("relevance_reviewed") is not True or c.get("allows_link_only") is not True:
+            continue
+        evidence_url = str(c.get("permission_evidence_url") or "")
+        reviewed_at = str(c.get("permission_reviewed_at") or "")
+        if not is_public_http(evidence_url) or not reviewed_at:
+            continue
+        try:
+            reviewed_dt = datetime.fromisoformat(reviewed_at)
+            if reviewed_dt.tzinfo is None or (now_ist() - reviewed_dt).days > 30:
+                continue
+        except Exception:
+            continue
         if status in ("discovered", "eligible", "uncertain", "failed", "skipped"):
             out.append(c)
         if len(out) >= AUTO_CANDIDATE_LIMIT:
