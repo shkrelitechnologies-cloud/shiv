@@ -1,15 +1,17 @@
 {
-  "date_ist": "2026-11-20",
+  "date_ist": "2026-11-21",
   "target": 666,
   "verified_publications": 0,
   "unique_verified_destinations": [],
-  "attempts": 2,
+  "attempts": 0,
   "pending": 0,
   "rejected": 0,
-  "skipped": 6,
-  "failed": 2,
+  "skipped": 0,
+  "failed": 0,
   "uncertain": 0,
+  "duplicates": 0,
+  "blocked": 0,
+  "template_skips_excluded": 0,
   "remaining": 666,
-  "last_run_ist": "2026-11-20T22:24:02.196171+05:30",
-  "template_skips_excluded": 1
+  "last_run_ist": "2026-11-21T04:31:37.754204+05:30"
 }
