@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-20T00:38:19.564432+00:00",
+  "updated_utc": "2026-11-20T07:38:37.098127+00:00",
   "mode": "research_only",
   "queries_configured": 13,
-  "search_pages": 38,
+  "search_pages": 39,
   "candidate_count": 0,
   "candidates": [],
   "errors": [
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek:Error",
+    "mojeek: challenged_or_rate_limited",
     "duckduckgo: challenged_or_rate_limited",
     "mojeek: challenged_or_rate_limited",
     "duckduckgo: challenged_or_rate_limited",
