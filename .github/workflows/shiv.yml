@@ -23,6 +23,11 @@ concurrency:
 
 jobs:
   publish:
+    # Explicit job-level lock protects shared operations/ state even if the
+    # workflow later gains additional jobs or triggers.
+    concurrency:
+      group: shiv-state-writer
+      cancel-in-progress: false
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
