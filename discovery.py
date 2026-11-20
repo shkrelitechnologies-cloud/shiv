@@ -110,7 +110,9 @@ def clean(raw: str) -> str:
 
 
 def infer_evidence(title: str, url: str, query: str):
-    hay = f"{title} {url} {query}".lower()
+    # Search terms describe the query, not the destination. Never let the query itself
+    # manufacture eligibility signals for an unrelated search result.
+    hay = f"{title} {url}".lower()
     score = sum(1 for term in TERMS if term in hay)
     method = "unknown"
     if "submit" in hay or "add" in hay or "suggest" in hay or "soumettre" in hay or "enviar" in hay or "提交" in hay or "送信" in hay or "제출" in hay:
