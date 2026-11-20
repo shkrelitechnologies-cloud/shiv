@@ -3,13 +3,13 @@
   "target": 666,
   "verified_publications": 0,
   "unique_verified_destinations": [],
-  "attempts": 1,
+  "attempts": 2,
   "pending": 0,
   "rejected": 0,
-  "skipped": 3,
-  "failed": 1,
+  "skipped": 6,
+  "failed": 2,
   "uncertain": 0,
   "remaining": 666,
-  "last_run_ist": "2026-11-20T14:18:25.088307+05:30",
+  "last_run_ist": "2026-11-20T15:10:32.936515+05:30",
   "template_skips_excluded": 1
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-11-20T08:48:25.087776+00:00",
+  "updated_utc": "2026-11-20T09:40:32.935827+00:00",
   "candidates": {
     "https://www.qwantjunior.com/": {
       "url": "https://www.qwantjunior.com/",
@@ -25,8 +25,8 @@
       "first_seen_utc": "2026-11-20T08:46:08.202913+00:00",
       "last_seen_utc": "2026-11-20T08:46:08.202913+00:00",
       "last_result": "no_eligible_link_only_form",
-      "last_attempt_utc": "2026-11-20T08:48:13.518956+00:00",
-      "last_checked_utc": "2026-11-20T08:48:13.519013+00:00"
+      "last_attempt_utc": "2026-11-20T09:40:23.556790+00:00",
+      "last_checked_utc": "2026-11-20T09:40:23.556831+00:00"
     },
     "https://www.welcometothejungle.com/en/companies/qwant": {
       "url": "https://www.welcometothejungle.com/en/companies/qwant",
@@ -51,8 +51,8 @@
       "first_seen_utc": "2026-11-20T08:46:08.203271+00:00",
       "last_seen_utc": "2026-11-20T08:46:08.203271+00:00",
       "last_result": "destination_http_403",
-      "last_attempt_utc": "2026-11-20T08:48:15.610931+00:00",
-      "last_checked_utc": "2026-11-20T08:48:15.611006+00:00"
+      "last_attempt_utc": "2026-11-20T09:40:20.230895+00:00",
+      "last_checked_utc": "2026-11-20T09:40:20.230972+00:00"
     },
     "https://discord.com/invite/vjhCHnFMkw": {
       "url": "https://discord.com/invite/vjhCHnFMkw",
@@ -77,8 +77,8 @@
       "first_seen_utc": "2026-11-20T08:46:08.203483+00:00",
       "last_seen_utc": "2026-11-20T08:46:08.203483+00:00",
       "last_result": "no_eligible_link_only_form",
-      "last_attempt_utc": "2026-11-20T08:48:19.543680+00:00",
-      "last_checked_utc": "2026-11-20T08:48:19.543721+00:00"
+      "last_attempt_utc": "2026-11-20T09:40:27.320594+00:00",
+      "last_checked_utc": "2026-11-20T09:40:27.320655+00:00"
     },
     "https://itunes.apple.com/us/app/qwant/id924470452": {
       "url": "https://itunes.apple.com/us/app/qwant/id924470452",
@@ -103,8 +103,8 @@
       "first_seen_utc": "2026-11-20T08:46:08.203590+00:00",
       "last_seen_utc": "2026-11-20T08:46:08.203590+00:00",
       "last_result": "no_eligible_link_only_form",
-      "last_attempt_utc": "2026-11-20T08:48:23.046740+00:00",
-      "last_checked_utc": "2026-11-20T08:48:23.046779+00:00"
+      "last_attempt_utc": "2026-11-20T09:40:30.893106+00:00",
+      "last_checked_utc": "2026-11-20T09:40:30.893147+00:00"
     }
   }
 }
