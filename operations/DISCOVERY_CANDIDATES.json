@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-11-20T07:42:45.078097+00:00",
+  "updated_utc": "2026-11-20T07:48:58.610693+00:00",
   "mode": "research_only",
   "queries_configured": 13,
-  "search_pages": 32,
+  "search_pages": 26,
   "candidate_count": 0,
   "candidates": [],
   "errors": [
@@ -21,16 +21,16 @@
     "duckduckgo: challenged_or_rate_limited",
     "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited",
+    "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited",
+    "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited",
+    "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited",
+    "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited",
+    "mojeek:Error",
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek: challenged_or_rate_limited"
+    "mojeek:Error"
   ]
 }
