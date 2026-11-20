@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "updated_utc": "2026-11-20T08:48:25.087776+00:00",
+  "candidates": {
+    "https://www.qwantjunior.com/": {
+      "url": "https://www.qwantjunior.com/",
+      "title": "Junior",
+      "category": "directory",
+      "language": "en",
+      "method": "form_or_submission_page",
+      "status": "skipped",
+      "source_engine": "qwant",
+      "source_query": "public web directory submit URL add your site link only",
+      "evidence": {
+        "routes_tried": [
+          "https://www.qwantjunior.com/"
+        ],
+        "any_eligible_form": false
+      },
+      "reasons": [
+        "discovered_from_search",
+        "no_eligible_link_only_form"
+      ],
+      "domain": "www.qwantjunior.com",
+      "first_seen_utc": "2026-11-20T08:46:08.202913+00:00",
+      "last_seen_utc": "2026-11-20T08:46:08.202913+00:00",
+      "last_result": "no_eligible_link_only_form",
+      "last_attempt_utc": "2026-11-20T08:48:13.518956+00:00",
+      "last_checked_utc": "2026-11-20T08:48:13.519013+00:00"
+    },
+    "https://www.welcometothejungle.com/en/companies/qwant": {
+      "url": "https://www.welcometothejungle.com/en/companies/qwant",
+      "title": "Join Us",
+      "category": "directory",
+      "language": "en",
+      "method": "form_or_submission_page",
+      "status": "failed",
+      "source_engine": "qwant",
+      "source_query": "public web directory submit URL add your site link only",
+      "evidence": {
+        "discovery_score": 3,
+        "discovery_engine": "qwant",
+        "discovery_query": "public web directory submit URL add your site link only",
+        "discovery_title": "Join Us"
+      },
+      "reasons": [
+        "discovered_from_search",
+        "destination_http_403"
+      ],
+      "domain": "www.welcometothejungle.com",
+      "first_seen_utc": "2026-11-20T08:46:08.203271+00:00",
+      "last_seen_utc": "2026-11-20T08:46:08.203271+00:00",
+      "last_result": "destination_http_403",
+      "last_attempt_utc": "2026-11-20T08:48:15.610931+00:00",
+      "last_checked_utc": "2026-11-20T08:48:15.611006+00:00"
+    },
+    "https://discord.com/invite/vjhCHnFMkw": {
+      "url": "https://discord.com/invite/vjhCHnFMkw",
+      "title": "Discord",
+      "category": "directory",
+      "language": "en",
+      "method": "form_or_submission_page",
+      "status": "skipped",
+      "source_engine": "qwant",
+      "source_query": "public web directory submit URL add your site link only",
+      "evidence": {
+        "routes_tried": [
+          "https://discord.com/invite/vjhCHnFMkw"
+        ],
+        "any_eligible_form": false
+      },
+      "reasons": [
+        "discovered_from_search",
+        "no_eligible_link_only_form"
+      ],
+      "domain": "discord.com",
+      "first_seen_utc": "2026-11-20T08:46:08.203483+00:00",
+      "last_seen_utc": "2026-11-20T08:46:08.203483+00:00",
+      "last_result": "no_eligible_link_only_form",
+      "last_attempt_utc": "2026-11-20T08:48:19.543680+00:00",
+      "last_checked_utc": "2026-11-20T08:48:19.543721+00:00"
+    },
+    "https://itunes.apple.com/us/app/qwant/id924470452": {
+      "url": "https://itunes.apple.com/us/app/qwant/id924470452",
+      "title": "Download the app",
+      "category": "directory",
+      "language": "en",
+      "method": "form_or_submission_page",
+      "status": "skipped",
+      "source_engine": "qwant",
+      "source_query": "public web directory submit URL add your site link only",
+      "evidence": {
+        "routes_tried": [
+          "https://itunes.apple.com/us/app/qwant/id924470452"
+        ],
+        "any_eligible_form": false
+      },
+      "reasons": [
+        "discovered_from_search",
+        "no_eligible_link_only_form"
+      ],
+      "domain": "itunes.apple.com",
+      "first_seen_utc": "2026-11-20T08:46:08.203590+00:00",
+      "last_seen_utc": "2026-11-20T08:46:08.203590+00:00",
+      "last_result": "no_eligible_link_only_form",
+      "last_attempt_utc": "2026-11-20T08:48:23.046740+00:00",
+      "last_checked_utc": "2026-11-20T08:48:23.046779+00:00"
+    }
+  }
+}

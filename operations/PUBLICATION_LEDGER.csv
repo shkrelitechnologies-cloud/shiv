@@ -1,3 +1,7 @@
 timestamp_ist,site,destination,status,detail,payload,readback_url
 2026-11-19T23:40:35.408613+05:30,unnamed,,skipped,invalid_destination_url,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
 2026-11-20T00:07:15.389597+05:30,unnamed,,skipped,invalid_destination_url,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
+2026-11-20T14:18:13.526140+05:30,Junior,https://www.qwantjunior.com/,skipped,no_eligible_link_only_form,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
+2026-11-20T14:18:15.617655+05:30,Join Us,https://www.welcometothejungle.com/en/companies/qwant,failed,destination_http_403,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
+2026-11-20T14:18:19.550114+05:30,Discord,https://discord.com/invite/vjhCHnFMkw,skipped,no_eligible_link_only_form,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
+2026-11-20T14:18:23.058786+05:30,Download the app,https://itunes.apple.com/us/app/qwant/id924470452,skipped,no_eligible_link_only_form,https://x.com/Shiv6xo/status/2103135286985420816?a=wXvMvt9e-Ph2h9Mqo48&s=19,
