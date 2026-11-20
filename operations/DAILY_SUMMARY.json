@@ -6,9 +6,10 @@
   "attempts": 0,
   "pending": 0,
   "rejected": 0,
-  "skipped": 1,
+  "skipped": 0,
   "failed": 0,
   "uncertain": 0,
   "remaining": 666,
-  "last_run_ist": "2026-11-20T00:44:48.955671+05:30"
+  "last_run_ist": "2026-11-20T06:08:19.756250+05:30",
+  "template_skips_excluded": 1
 }
