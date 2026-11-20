@@ -16,6 +16,7 @@ ENGINES={
  "duckduckgo":"https://html.duckduckgo.com/html/?q={q}",
  "bing":"https://www.bing.com/search?q={q}",
  "mojeek":"https://www.mojeek.com/search?q={q}",
+ "yahoo":"https://search.yahoo.com/search?p={q}",
 }
 QUERIES=[
  "public directory submit a link link-only submission rules",
@@ -61,9 +62,9 @@ def main():
   page=browser.new_page(locale="en-US")
   for query in QUERIES:
    for engine,template in ENGINES.items():
-    if pages>=45:break
+    if pages>=80:break
     try:
-     response=page.goto(template.format(q=quote_plus(query)),wait_until="domcontentloaded",timeout=12000)
+     response=page.goto(template.format(q=quote_plus(query)),wait_until="domcontentloaded",timeout=15000)
      pages+=1
      body=page.locator("body").inner_text(timeout=2500).lower()
      if (response and response.status in (401,403,429)) or any(x in body for x in BLOCK):
@@ -80,12 +81,12 @@ def main():
        "state":"RESEARCH_ONLY","permission_verified":False,
        "next_step":"inspect official rules and submission method; do not submit from discovery alone"}
     except Exception as e:errors.append(engine+":"+type(e).__name__)
-   if pages>=45:break
+   if pages>=80:break
   browser.close()
  OUT.parent.mkdir(parents=True,exist_ok=True)
  data={"updated_utc":datetime.now(timezone.utc).isoformat(),"mode":"research_only",
   "queries_configured":len(QUERIES),"search_pages":pages,"candidate_count":len(by),
-  "candidates":list(by.values())[-1000:],"errors":errors[-50:]}
+  "candidates":list(by.values())[-2000:],"errors":errors[-80:]}
  tmp=OUT.with_suffix(".json.tmp");tmp.write_text(json.dumps(data,indent=2,ensure_ascii=False)+"\n",encoding="utf-8");tmp.replace(OUT)
  print(json.dumps({k:data[k] for k in ("mode","queries_configured","search_pages","candidate_count","errors")}))
 if __name__=="__main__":main()
