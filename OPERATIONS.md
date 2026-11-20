@@ -54,3 +54,16 @@ A configured workflow or successful maintenance run is not evidence of publicati
 
 ## Operator shorthand: `666`
 When the operator requests `666`, include SHIV in the four-project audit (COCO, HUNTER, MAYA, SHIV). Read `operations/DAILY_SUMMARY.json` and reconcile today's IST count against `operations/PUBLICATION_LEDGER.csv`; report verified unique publications / 666, remaining target, separate attempts/pending/rejected/failed/skipped/uncertain counts, and required throughput to midnight IST. A successful Playwright or Actions run is not a publication. With no approved destination configured, report zero attempts and zero verified publications; do not fabricate destinations or treat discovery leads as permission. If the ledger is unavailable or inconsistent, report the count as **unverifiable**, not zero.
+
+**Local audit command:** `python ops_666.py` (read-only, ledger-first).
+
+## Operational reference
+- **Purpose:** Submit only the fixed authorized link payload to explicitly reviewed, relevant, link-only public destinations using Playwright; verify by public readback.
+- **Entry points/workflows:** `.github/workflows/shiv.yml` (publisher, schedule + `workflow_dispatch`), `.github/workflows/shiv-watchdog.yml` (health/recovery). `shiv.py` is the execution entry point; `discovery.py` is research-only.
+- **Daily target/reset:** 666 verified unique public placements/day; IST (`Asia/Kolkata`) 00:00 reset via daily summary logic; history retained in append-only ledger.
+- **Configuration/credentials:** `sites.json` (approved destinations/selectors/readback), fixed payload in code/docs, `requirements.txt`. No secrets required for current empty-destination mode; any future credentials must be in GitHub Actions secrets only.
+- **Ledgers/queues:** `operations/PUBLICATION_LEDGER.csv`, `operations/DAILY_SUMMARY.json`, `operations/DISCOVERY_CANDIDATES.json` (research-only).
+- **Verification:** Count only distinct destination with successful public readback confirming the exact payload is visible. Attempts/pending/uncertain/skipped/failed do not count.
+- **Error handling:** Skip invalid/unapproved/irrelevant/barrier destinations (CAPTCHA/login/verification/payment/human approval/ambiguous/missing selectors), record reason, continue; bounded retries for transient technical failures only.
+- **Resource limits:** Bounded workflow timeout, per-destination pacing, single-run concurrency group, no unbounded loops.
+- **Manual intervention:** Required to review/add permitted destinations in `sites.json`, handle site policy changes, or resolve platform restrictions. Resume by updating config safely and dispatching `shiv.yml`.
