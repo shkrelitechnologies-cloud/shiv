@@ -23,9 +23,9 @@ Do not add captions, descriptions, hashtags, comments, tracking parameters, shor
 `shiv.py` may process:
 - explicitly configured adapters in `sites.json` (manual entries must be reviewed for permission, relevance, and link-only suitability), and
 - reusable auto adapters in `operations/AUTO_ADAPTERS.json` learned from successful evidence-based submissions, and
-- discovered candidates from the candidate DB through an automatic, evidence-based submission path.
+- discovered candidates from the candidate DB only after an explicit human review record is present.
 
-Automatic submission is allowed only when there is clear, evidence-based indication the destination accepts relevant public link/URL submissions via an available form SHIV can comply with: an unambiguous URL/link input and submit control, no extra required user-fillable fields beyond the link, no barriers, and on-page submission/directory/resource context. SHIV records evidence/reasons, tries other plausible forms/routes on the same site before skipping when appropriate, and skips when unclear, unrelated, prohibited, or blocked.
+Discovery and form detection are never permission. An auto-discovered candidate remains research-only unless it has all of: `permission_reviewed=true`, `relevance_reviewed=true`, `allows_link_only=true`, an HTTPS `permission_evidence_url` pointing to current official rules/authorization, and a timezone-aware `permission_reviewed_at` no older than 30 days. Only then may SHIV inspect the exact link-only form and verify that no extra required user-fillable fields or barriers exist. Missing/stale evidence means skip without submitting.
 
 Do not submit indiscriminately to unrelated sites, comments, forums, profiles, or forms. Do not bypass relevance requirements, site policies, consent requirements, rate limits, robots/site restrictions, or anti-spam controls. If a destination requires additional text/caption/unrelated content, registration/login, CAPTCHA, puzzle solving, email/phone verification, payment, or human approval, skip it and continue. Never solve or bypass CAPTCHA or access controls.
 
