@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22T07:03:44.832965+00:00",
+  "updated_utc": "2026-11-22T11:45:31.886003+00:00",
   "mode": "research_and_evidence_pipeline",
   "queries_configured": 44,
   "search_pages": 120,
@@ -112,7 +112,7 @@
   ],
   "errors": [
     "duckduckgo: challenged_or_rate_limited",
-    "mojeek:Error",
+    "mojeek: challenged_or_rate_limited",
     "brave: challenged_or_rate_limited",
     "ecosia: challenged_or_rate_limited",
     "duckduckgo: challenged_or_rate_limited",
