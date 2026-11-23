@@ -71,3 +71,6 @@ When the operator requests `666`, include SHIV in the four-project audit (COCO, 
 - **Error handling:** Skip invalid/unapproved/irrelevant/barrier/unclear destinations (CAPTCHA/login/verification/payment/human approval/ambiguous/missing selectors/extra required fields/prohibited or unrelated context), record reason and evidence, continue; try other plausible forms/routes on the same site when appropriate; bounded retries for transient technical failures only.
 - **Resource limits:** Bounded workflow timeout, bounded discovery/search pages, bounded candidate attempts per run, per-destination pacing, single-run concurrency group, no unbounded loops.
 - **Manual intervention:** May be needed to review site policy changes, add high-quality manual adapters in `sites.json`, or resolve platform restrictions. Resume by updating config/code safely and dispatching `shiv.yml`.
+
+
+<!-- Operator authorized a fresh SHIV run on 2026-11-24; execution remains limited to reviewed, permitted adapters and public readback verification. -->
