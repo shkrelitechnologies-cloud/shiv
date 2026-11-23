@@ -102,3 +102,8 @@ Keep both as research-only references. Do not add them to the site's configurati
 - DevElif official page: https://develif.com/
 - Zearches official page: https://zearches.com/
 - Reviewed 2026-11-24; browser-visible page content inspected.
+
+
+## Four-project target alignment — 2026-11-24
+
+SHIV's 666 independently verified public placements/day is its own target, not a shared target. COCO, HUNTER, and MAYA each have separate 666/day targets, making 2,664 combined verified placements/day. Never credit another project's results to SHIV. Keep discovery, deduplication, eligibility checks, permitted submissions, independent public readback, persistence, and reporting unattended within current rules and capacity. Skip barriers and continue elsewhere; never bypass CAPTCHA, login/verification, payment, human approval, or site restrictions. The 666 target is not a guarantee and must never be met by inflating counts.
