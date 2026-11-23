@@ -74,3 +74,31 @@ When the operator requests `666`, include SHIV in the four-project audit (COCO, 
 
 
 <!-- Operator authorized a fresh SHIV run on 2026-11-24; execution remains limited to reviewed, permitted adapters and public readback verification. -->
+
+---
+
+# New venue research — 2026-11-24
+
+Mode: research only. No submissions were made.
+
+## Newly inspected public directory venues
+
+### DevElif
+- URL: https://develif.com/
+- Official page says free listing, no account, and a form requiring a website URL, email, site name, description and category.
+- Assessment for SHIV's fixed payload: **not approved**. It is a website/business directory and asks for descriptive listing metadata; SHIV is authorized to submit only the exact X post URL with no caption or extra text. No explicit permission for automated submission of social-post URLs was found.
+- Source: https://develif.com/
+
+### Zearches
+- URL: https://zearches.com/
+- Official submission form requires a direct public website URL, site name, category/type, short and detailed descriptions, features, audience, use case, differentiator and contact email. It explicitly disallows extra links in the short description and screens submissions.
+- Assessment for SHIV's fixed payload: **not approved**. The form is for a website listing, not a bare social-post URL; it requires substantial extra content, which SHIV is not authorized to add.
+- Source: https://zearches.com/
+
+## Operating decision
+Keep both as research-only references. Do not add them to the site's configuration, reusable adapters, or eligible submission queue. Do not submit the X post URL there. Revisit only if the destination's current official rules explicitly accept individual social-post URLs and explicitly permit the intended automated link-only method, and a human records the required permission/relevance review. Continue to skip login, CAPTCHA, verification, payment, approval, or other access barriers without bypassing them.
+
+## Evidence
+- DevElif official page: https://develif.com/
+- Zearches official page: https://zearches.com/
+- Reviewed 2026-11-24; browser-visible page content inspected.
