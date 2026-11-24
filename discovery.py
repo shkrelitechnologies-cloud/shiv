@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """SHIV global multilingual destination research and candidate ingestion.
 
 Research/discovery only: discovered pages are untrusted leads and not posting
@@ -132,6 +132,7 @@ def main():
     errors = []
     pages = 0
     seen = set()
+    paused_engines = set()
     max_pages = 120
 
     with sync_playwright() as p:
@@ -142,6 +143,10 @@ def main():
                 for engine, template in ENGINES.items():
                     if pages >= max_pages:
                         break
+                    # A challenged/rate-limited engine is paused for the rest of this
+                    # run. Later queries proceed with the remaining engines instead.
+                    if engine in paused_engines:
+                        continue
                     try:
                         response = page.goto(template.format(q=quote_plus(query)), wait_until="domcontentloaded", timeout=15000)
                         pages += 1
@@ -151,7 +156,8 @@ def main():
                         except Exception:
                             body = ""
                         if (response and response.status in (401, 403, 429)) or any(x in body for x in BLOCK):
-                            errors.append(f"{engine}: challenged_or_rate_limited")
+                            errors.append(f"{engine}: challenged_or_rate_limited; paused_for_run")
+                            paused_engines.add(engine)
                             continue
                         links = page.locator("a[href]").evaluate_all(
                             "els=>els.map(a=>({url:a.href,title:(a.innerText||a.getAttribute('aria-label')||a.getAttribute('title')||'').trim()}))"
@@ -186,8 +192,8 @@ def main():
                             }, history_reason="discovered")
                     except Exception as e:
                         errors.append(f"{engine}:{type(e).__name__}")
-                if pages >= max_pages:
-                    break
+            if pages >= max_pages:
+                pass
         finally:
             try:
                 browser.close()
@@ -201,6 +207,7 @@ def main():
         "queries_configured": export["queries_configured"],
         "search_pages": export["search_pages"],
         "candidate_count": export["candidate_count"],
+        "paused_engines": sorted(paused_engines),
         "errors": export["errors"],
     }, ensure_ascii=False))
 
