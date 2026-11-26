@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26T03:09:56.703803+00:00",
+  "updated_utc": "2026-11-26T03:45:51.222309+00:00",
   "mode": "research_and_evidence_pipeline",
   "queries_configured": 44,
   "search_pages": 120,
@@ -149,9 +149,6 @@
     "mojeek:Error",
     "mojeek:Error",
     "mojeek:Error",
-    "mojeek:Error",
-    "mojeek:Error",
-    "mojeek:Error",
-    "mojeek:Error"
+    "mojeek: challenged_or_rate_limited; paused_for_run"
   ]
 }
