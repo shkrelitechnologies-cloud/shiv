@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-11-28T04:38:37.280019+00:00",
+  "updated_utc": "2026-11-28T12:28:57.942484+00:00",
   "mode": "research_and_evidence_pipeline",
   "queries_configured": 44,
-  "search_pages": 59,
+  "search_pages": 62,
   "candidate_count": 4,
   "candidates": [
     {
@@ -112,12 +112,11 @@
   ],
   "errors": [
     "duckduckgo: challenged_or_rate_limited; paused_for_run",
-    "mojeek: challenged_or_rate_limited; paused_for_run",
+    "mojeek:Error",
     "brave: challenged_or_rate_limited; paused_for_run",
     "ecosia: challenged_or_rate_limited; paused_for_run",
-    "yahoo:Error",
-    "qwant:Error",
-    "bing:Error",
+    "mojeek:Error",
+    "mojeek: challenged_or_rate_limited; paused_for_run",
     "yahoo:Error",
     "qwant:Error",
     "bing:Error",
